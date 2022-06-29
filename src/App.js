@@ -6,6 +6,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Redirect
 } from 'react-router-dom';
 
 import Home from './Home';
@@ -19,9 +20,10 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/users" element={<Users/>} />
+          <Redirect exact from="/first-site-bs" to="/" />
+          <Route path="/users" element={<Users />} />
           <Route path="/about" element={<About />} />
+          <Route exact path="/" element={<Home />} />
         </Routes>
       </Router>
       <Footer />
